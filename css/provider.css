@@ -1,0 +1,183 @@
+#wrap {
+  overflow: hidden;
+}
+#wrap .header_wrap {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 65px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+#wrap .header_wrap .header {
+  width: 1200px;
+  height: 65px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+#wrap .header_wrap .header .header_logo {
+  float: left;
+  width: 280px;
+  height: 40px;
+  margin-top: 8px;
+}
+#wrap .header_wrap .header .header_nav {
+  float: right;
+  margin-top: 8px;
+}
+#wrap .header_wrap .header .header_nav #position {
+  margin-right: 50px;
+}
+#wrap .header_wrap .header .header_nav #position img {
+  vertical-align: middle;
+}
+#wrap .header_wrap .header .header_nav #position span {
+  font-weight: bold;
+}
+#wrap .header_wrap .header .header_nav li {
+  float: left;
+}
+#wrap .header_wrap .header .header_nav li > a {
+  display: block;
+  font-weight: bold;
+  color: black;
+  padding: 10px 15px;
+  line-height: 20px;
+}
+#wrap .header_wrap .header .header_nav li > a:hover {
+  background: #fff;
+  color: #e94840;
+}
+#wrap .header_wrap .header .header_nav .shop_login {
+  border-radius: 4px;
+  background: #e94840;
+}
+#wrap .header_wrap .header .header_nav .shop_login > a {
+  color: #fff;
+}
+#wrap .provider {
+  width: 1200px;
+  margin: 80px auto 0;
+}
+#wrap .provider .provider_title {
+  color: black;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+}
+#wrap .provider .provider_list .providers {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  width: 960px;
+}
+#wrap .provider .provider_list .providers .provider_item {
+  margin: 0 10px 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  height: 270px;
+}
+#wrap .provider .provider_list .providers .provider_item .provider_img {
+  width: 210px;
+  height: 210px;
+}
+#wrap .provider .provider_list .providers .provider_item .provider_content {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+#wrap .provider .provider_list .providers .provider_item .provider_content .home1 {
+  margin-right: 6px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+#wrap .provider .provider_list .providers .provider_item .provider_rating {
+  font-size: 12px;
+  margin-top: 10px;
+}
+#wrap .provider .provider_list .providers .provider_item .provider_rating .good {
+  float: right;
+}
+#wrap .provider .provider_list .ad {
+  float: right;
+  width: 230px;
+}
+#wrap .provider .provider_list .ad li a {
+  display: block;
+}
+#wrap .footer .footer_wrap .footer_top {
+  margin-top: 50px;
+}
+#wrap .footer .footer_wrap .footer_top .top_title {
+  text-align: center;
+}
+#wrap .footer .footer_wrap .footer_top .top_title h2 {
+  font-weight: bold;
+  font-size: 30px;
+}
+#wrap .footer .footer_wrap .footer_top .top_title h2 .title_tip {
+  color: #fb474f;
+  font-weight: bold;
+}
+#wrap .footer .footer_wrap .footer_top .top_title p {
+  font-size: 22px;
+  margin: 15px 0;
+}
+#wrap .footer .footer_wrap .footer_top .top_title .serv {
+  text-align: center;
+  margin-top: 20px;
+}
+#wrap .footer .footer_wrap .footer_top .top_title .serv li {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 30px;
+}
+#wrap .footer .footer_wrap .footer_top .top_title .serv li img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#wrap .footer .footer_wrap .footer_top .city {
+  margin: 20px auto;
+  width: 1200px;
+}
+#wrap .footer .footer_wrap .footer_top .city .city_title {
+  font-weight: bold;
+  font-size: 18px;
+  float: left;
+}
+#wrap .footer .footer_wrap .footer_top .city .city_list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1090px;
+  margin-left: 80px;
+}
+#wrap .footer .footer_wrap .footer_top .city .city_list li {
+  text-align: center;
+  width: 98px;
+  height: 30px;
+}
+#wrap .footer .footer_wrap .footer_bottom {
+  width: 1200px;
+  margin: 0 auto;
+}
+#wrap .footer .footer_wrap .footer_bottom .partner {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+#wrap .footer .footer_wrap .footer_bottom ul {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#wrap .footer .footer_wrap .footer_bottom ul li {
+  width: 110px;
+  height: 60px;
+  margin: 0 10px;
+}
+#wrap .footer .footer_wrap .footer_bottom ul li a {
+  display: block;
+}
+#wrap .footer .footer_wrap .footer_bottom ul li a img {
+  width: 100px;
+}

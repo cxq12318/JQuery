@@ -2,7 +2,6 @@
   overflow: hidden;
 }
 #wrap .header_wrap {
-  position: fixed;
   z-index: 2;
   width: 100%;
   height: 65px;
@@ -55,54 +54,103 @@
 #wrap .header_wrap .header .header_nav .shop_login > a {
   color: #fff;
 }
+#wrap .header_wrap.showhead {
+  position: fixed;
+  animation: aa 0.5s;
+  box-shadow: 0 0 8px 0 #7e8c8d;
+}
+@keyframes aa {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 #wrap nav {
   position: relative;
-  margin-top: 66px;
 }
 #wrap nav .carousel_wrap {
   height: 420px;
   width: 100%;
+  /*
+      .carousel{
+        height:100%;
+        width: 100%;
+        position: relative;
+        .banner{
+          height: 100%;
+          width: 100%;
+          position: relative;
+          li{
+            position: absolute;
+            height: 420px;
+            width: 100%;
+            //display: none;
+          }
+          .banner1{
+            background-image: url("../images/Home/banner1.jpg");
+            background-position: -280px 0;
+          }
+          .banner2{
+            background-image: url("../images/Home/banner2.jpg");
+            background-position: -280px 0;
+          }
+          .banner3{
+            background-image: url("../images/Home/banner3.jpg");
+            background-position: -280px 0;
+          }
+        }
+        .cbanner{
+          width: 100%;
+          text-align: center;
+          position: absolute;
+          bottom: 0;
+          li{
+            display: inline-block;
+            width: 10px;
+            height:10px;
+            margin: 3px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+          }
+        }
+      }
+      */
 }
-#wrap nav .carousel_wrap .carousel {
+#wrap nav .carousel_wrap .swiper-container {
+  width: 100%;
   height: 100%;
-  width: 100%;
-  position: relative;
 }
-#wrap nav .carousel_wrap .carousel .banner {
-  height: 100%;
-  width: 100%;
-  position: relative;
+#wrap nav .carousel_wrap .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-#wrap nav .carousel_wrap .carousel .banner li {
-  position: absolute;
-  height: 420px;
-  width: 100%;
-}
-#wrap nav .carousel_wrap .carousel .banner .banner1 {
+#wrap nav .carousel_wrap .banner1 {
   background-image: url("../images/Home/banner1.jpg");
   background-position: -280px 0;
 }
-#wrap nav .carousel_wrap .carousel .banner .banner2 {
+#wrap nav .carousel_wrap .banner2 {
   background-image: url("../images/Home/banner2.jpg");
   background-position: -280px 0;
 }
-#wrap nav .carousel_wrap .carousel .banner .banner3 {
+#wrap nav .carousel_wrap .banner3 {
   background-image: url("../images/Home/banner3.jpg");
   background-position: -280px 0;
-}
-#wrap nav .carousel_wrap .carousel .cbanner {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-}
-#wrap nav .carousel_wrap .carousel .cbanner li {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 3px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
 }
 #wrap nav .nav_tab {
   float: left;
@@ -149,7 +197,7 @@
   display: none;
   width: 160px;
   height: 420px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.8);
   position: absolute;
   top: 0;
   left: 180px;
@@ -158,6 +206,9 @@
   color: black;
   font-weight: bold;
   line-height: 42px;
+}
+#wrap nav .nav_tab .navname ul li a:hover {
+  color: #e94840;
 }
 #wrap .content_wrap .content > li {
   width: 1200px;

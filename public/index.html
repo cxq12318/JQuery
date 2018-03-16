@@ -5,6 +5,7 @@
   <title>daoway</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/home.css">
+  <link href="https://cdn.bootcss.com/Swiper/4.1.6/css/swiper.min.css" rel="stylesheet">
   <!--
     <style>
       .nav_tab{
@@ -42,7 +43,7 @@
         <li id="position" class="active">
           <a href="#">
             <img src="./images/Home/citypoint.png">
-            <span>北京</span>
+            <span style="color: black">北京</span>
             <span>切换城市</span>
           </a>
         </li>
@@ -65,7 +66,7 @@
           <a href="#">关于我们</a>
         </li>
         <li class="shop_login">
-          <a href="#">商家登陆</a>
+          <a href="#" style="color: #fff;background:#e94840;border-radius: 4px">商家登陆</a>
         </li>
       </ul>
     </header>
@@ -73,17 +74,13 @@
   <!--轮播图-->
   <nav>
     <div class="carousel_wrap">
-      <div class="carousel">
-        <ul class="banner">
-          <li class="banner1"></li>
-          <li class="banner2"></li>
-          <li class="banner3"></li>
+      <div class="swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="banner1 swiper-slide"></li>
+          <li class="banner2 swiper-slide"></li>
+          <li class="banner3 swiper-slide"></li>
         </ul>
-        <ul class="cbanner">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
     <ul class="nav_tab">
@@ -347,17 +344,12 @@
           </li>
         </ul>
       </li>
-      <!--
-            <li class="absolute-box" style="height:500px">
-              <div></div>
-            </li>
-      -->
     </ul>
   </nav>
   <!--列表-->
   <div class="content_wrap">
     <ul class="content">
-      <li>
+      <!--<li>
         <div class="content_text">
           <div class="text_middle">
             <div class="text">家庭保洁</div>
@@ -1314,7 +1306,7 @@
             </a>
           </li>
         </ul>
-      </li>
+      </li>-->
     </ul>
   </div>
   <!--底部-->
@@ -1543,19 +1535,83 @@
     </div>
   </footer>
 </div>
+<script id="temp1" type="text/html">
+  {{each data.list}}
+  <li>
+    <div class="content_text">
+      <div class="text_middle">
+        <div class="text">{{$value.serviceIndex}}</div>
+        <div class="text_bottom">
+          {{each $value.serviceType}}
+          <a href="#">{{$value}}</a>
+          {{/each}}
+        </div>
+      </div>
+      <div class="more">
+        <a href="">更多服务></a>
+      </div>
+    </div>
+    <ul class="text_list">
+      {{each $value.shopList}}
+      <li class="list_item">
+        <a href="#">
+          <img src="{{$value.imgUrl}}">
+          <div>
+            <p class="list_title">{{$value.serviceName}}</p>
+            <p class="list_content">{{$value.description}}</p>
+          </div>
+          <div class="price">
+            <span class="cash">{{$value.price}}</span>元/小时
+            <span class="details">查看详情</span>
+          </div>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </li>
+  {{/each}}
+</script>
 <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.min.js"></script>
+<script type="text/javascript" src="./js/template-web.js"></script>
 <script type="text/javascript">
+  var swiper = new Swiper('.swiper-container', {
+    spaceBetween: 30,
+    effect: 'fade',
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction:false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
   $(function () {
     $('.nav_tab>li').hover(function () {
       $(this).addClass('on')
       $(this).find('ul').css({display: 'block'})
       $(this).find('.icon1').css({display: 'block'})
       $(this).find('.right').css({display: 'none'})
-    }, function () {
+    },
+      function () {
       $(this).removeClass('on')
       $(this).find('ul').css({display: 'none'})
       $(this).find('.icon1').css({display: 'none'})
       $(this).find('.right').css({display: 'block'})
+    })
+    var $top = $('.header_wrap').height()
+    $(window).scroll(function () {
+      var $scrollTop = $(window).scrollTop()
+      if($scrollTop>$top){
+        $('.header_wrap').addClass('showhead')
+      }else{
+        $('.header_wrap').removeClass('showhead')
+      }
+    })
+    $.get('/shoplist',function (data) {
+      //找到模板渲染
+      $('.content').append(template('temp1',{data:data}))
     })
   })
 </script>
